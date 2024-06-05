@@ -57,7 +57,7 @@ class Creator:
         self.bottom.pack()
         tkinter.mainloop()
     def secilebilir(self):
-        if self.sayiVar.get() == 1:
+        if self.sayiVar.get():
             self.sayi.config(state="active")
         else:
             self.sayi.config(state="disabled")
@@ -76,18 +76,22 @@ class Creator:
     def olusturma(self):
         global sifrem
         sifrem = ''
-        for i in range(0,self.sayi.get()):
-            karakter = random.choice(sayilar)
-            sifrem = sifrem + karakter
-        for j in range(0,self.kucukHarf.get()):
-            karakter = random.choice(kucukHarf)
-            sifrem = sifrem + karakter
-        for k in range(0,self.buyukHarf.get()):
-            karakter = random.choice(buyukHarf)
-            sifrem = sifrem + karakter
-        for l in range(0,self.sembolS.get()):
-            karakter = random.choice(sembol)
-            sifrem = sifrem + karakter
+        if self.sayiVar.get():
+            for i in range(0,self.sayi.get()):
+                karakter = random.choice(sayilar)
+                sifrem = sifrem + karakter
+        if self.kucukVar.get():
+            for j in range(0,self.kucukHarf.get()):
+                karakter = random.choice(kucukHarf)
+                sifrem = sifrem + karakter
+        if self.buyukVar.get():
+            for k in range(0,self.buyukHarf.get()):
+                karakter = random.choice(buyukHarf)
+                sifrem = sifrem + karakter
+        if self.sembolVar.get():
+            for l in range(0,self.sembolS.get()):
+                karakter = random.choice(sembol)
+                sifrem = sifrem + karakter
         sifreListe = list(sifrem)
         random.shuffle(sifreListe)
         sifrem = ''.join(sifreListe)
