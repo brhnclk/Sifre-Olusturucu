@@ -9,7 +9,7 @@ sifrem =""
 class Creator:
     def __init__(self):
         self.mainWindow = tkinter.Tk()
-        self.mainWindow.title("To-Do List")
+        self.mainWindow.title("Şifre Oluşturucu")
         self.mainWindow.geometry('400x450')
         self.top = tkinter.Frame(self.mainWindow)
         self.mid = tkinter.Frame(self.mainWindow)
