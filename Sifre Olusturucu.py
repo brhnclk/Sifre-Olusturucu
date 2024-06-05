@@ -10,7 +10,10 @@ class Creator:
     def __init__(self):
         self.mainWindow = tkinter.Tk()
         self.mainWindow.title("Şifre Oluşturucu")
-        self.mainWindow.geometry('400x450')
+        self.screen_width = self.mainWindow.winfo_screenwidth()
+        self.screen_height = self.mainWindow.winfo_screenheight()
+        self.mainWindow.geometry(f"400x450+{(self.screen_width//2)-200}+{(self.screen_height//2)-300}")
+        self.mainWindow.resizable(width=False,height=False)
         self.top = tkinter.Frame(self.mainWindow)
         self.mid = tkinter.Frame(self.mainWindow)
         self.bottom = tkinter.Frame(self.mainWindow)
