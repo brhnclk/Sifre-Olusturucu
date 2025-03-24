@@ -44,7 +44,7 @@ class Creator:
         self.olusturButon = tkinter.Button(self.mid,text="Şifre Oluştur",command= self.olusturma)
         self.olusturButon.pack()
         self.sifreVar = tkinter.StringVar()
-        self.sifreLabel = tkinter.Label(self.bottom,textvariable=self.sifreVar)
+        self.sifreLabel = tkinter.Label(self.bottom,textvariable=self.sifreVar,font=("Arial",25))
         self.sifreLabel.pack()
         self.sifreAd = tkinter.Label(self.bottom,text="Şifrenize İsim Koyun")
         self.sifreAd.pack()
@@ -60,19 +60,32 @@ class Creator:
         if self.sayiVar.get():
             self.sayi.config(state="active")
         else:
+            self.sayi.set(0)  # Önce değeri sıfırla
             self.sayi.config(state="disabled")
+            self.mainWindow.update_idletasks()  # Tkinter'ı güncelle
+
         if self.kucukVar.get():
             self.kucukHarf.config(state="active")
         else:
+            self.kucukHarf.set(0)
             self.kucukHarf.config(state="disabled")
+            self.mainWindow.update_idletasks()
+
         if self.buyukVar.get():
             self.buyukHarf.config(state="active")
         else:
+            self.buyukHarf.set(0)
             self.buyukHarf.config(state="disabled")
+            self.mainWindow.update_idletasks()
+
         if self.sembolVar.get():
             self.sembolS.config(state="active")
         else:
+            self.sembolS.set(0)
             self.sembolS.config(state="disabled")
+            self.mainWindow.update_idletasks()
+
+
     def olusturma(self):
         global sifrem
         sifrem = ''
