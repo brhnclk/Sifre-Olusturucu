@@ -60,32 +60,27 @@ class Creator:
         if self.sayiVar.get():
             self.sayi.config(state="active")
         else:
-            self.sayi.set(0)  # Önce değeri sıfırla
+            self.sayi.set(0)
             self.sayi.config(state="disabled")
-            self.mainWindow.update_idletasks()  # Tkinter'ı güncelle
-
+            self.mainWindow.update_idletasks()
         if self.kucukVar.get():
             self.kucukHarf.config(state="active")
         else:
             self.kucukHarf.set(0)
             self.kucukHarf.config(state="disabled")
             self.mainWindow.update_idletasks()
-
         if self.buyukVar.get():
             self.buyukHarf.config(state="active")
         else:
             self.buyukHarf.set(0)
             self.buyukHarf.config(state="disabled")
             self.mainWindow.update_idletasks()
-
         if self.sembolVar.get():
             self.sembolS.config(state="active")
         else:
             self.sembolS.set(0)
             self.sembolS.config(state="disabled")
             self.mainWindow.update_idletasks()
-
-
     def olusturma(self):
         global sifrem
         sifrem = ''
